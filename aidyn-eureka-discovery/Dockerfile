@@ -9,8 +9,8 @@ RUN mvn -f pom.xml clean install -DskipTests
 
 FROM azul/zulu-openjdk-alpine:17
 
-COPY --from=build /opt/app/target/spring_eureka_server*.jar eureka_server.jar
+COPY --from=build /opt/app/target/spring-eureka-server*.jar eureka-server.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "eureka_server.jar"]
+ENTRYPOINT ["java", "-jar", "eureka-server.jar"]
